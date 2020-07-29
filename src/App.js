@@ -1,36 +1,84 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import RequestList from './components/RequestList/RequestList';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import userService from '../src/components/utils/userService';
+import MainPage from '../src/components/Pages/MainPage/MainPage';
+import SignupPage from '../src/components/Pages/SignupPage/SignupPage';
+import LoginPage from '../src/components/Pages/LoginPage/LoginPage';
+import RequestForm from './components/RequestForm/RequestForm';
+import EscortForm from './components/EscortForm/EscortForm';
+import NavBar from './components/NavBar/NavBar';
+
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: userService.getUser()
+    };
+  }
 
 
 
-const RequestForm = () => {
-  return (
-    <form>
-      <label>Able Bodied Y/N: </label>
-      <input placeholder="Y"/>
-      <label>Danger Level: </label>
-      <input placeholder="High"/>
-      <label>Location: </label>
-      <input placeholder="Denver"/>
-      <label>Details: </label>
-      <input placeholder="waiting by stop sign outside Sprouts"/>
-      <button>Submit</button><button>Cancel</button>
-    </form>
-  ); 
+handleLogout = () => {
+  userService.logout();
+  this.setState({ user: null });
 }
 
-function App() {
+handleSignupOrLogin = () => {
+  this.setState({ user: userService.getUser() });
+}
+
+render() {
   return (
     <div className="App">
       <header className="App-header">
-        React GYB
+        React GYB <NavBar user={this.props.user} handleLogout={this.props.handleLogout} />
       </header>
-      <h1>Welcome, Let's get started!</h1>
-      <RequestList/>
-      <RequestForm/>
+      
+      <Switch>
+          <Route exact path='/' render={() =>
+            <MainPage 
+              handleLogout={this.handleLogout}
+              user={this.state.user} />
+            }/>
+            <Route exact path='/signup' render={({ history }) => 
+              <SignupPage
+                history={history}
+                handleSignupOrLogin={this.handleSignupOrLogin}/>
+            }/>
+            <Route exact path='/login' render={({history}) => 
+            <LoginPage  
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              history={history}/>
+            }/>
+            <Route exact path='/requestForm' render={() =>
+            <RequestForm />
+            }/>
+            <Route exact path='/escortForm' render={() =>
+            <EscortForm />
+            }/>
+      </Switch>
     </div>
-  );
+    );
+  }
 }
-
 export default App;
+
+/*   request form limited access
+ <Route exact path='/requestForm' render={() => 
+                userService.getUser() ? 
+                <RequestForm />
+                :
+                <Redirect to='login' />
+            }/>
+
+        ESCORT FORM LIMIT TO USER ACCESS
+        <Route exact path='/escortForm' render={() => 
+                userService.getUser() ? 
+                <EscortForm />
+                :
+                <Redirect to='login' />
+            }/>
+
+*/

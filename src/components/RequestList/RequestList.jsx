@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import RequestListItem from '../RequestListItem/RequestListItem'
+import RequestListItem from '../RequestListItem/RequestListItem';
+import './RequestList.css';
 
 export default class RequestList extends Component {
     state = {
@@ -27,7 +28,7 @@ export default class RequestList extends Component {
         );
     return (   
       <ul>
-        { requests }
+        <div className="container">{ requests }</div>
       </ul>
     );
   }
