@@ -8,13 +8,9 @@ export default class RequestList extends Component {
     state = {
         escorts: [],
         escortToEdit: null
-    }
+    };
 
-    handleAddEscort = async escort => {
-       const escorts = await escortService.createEscort({title: "", ableBodied: true, vehicle: "", walking: "", location: "", selfDefenseTraining: false,availability: "", details: ""})
-       console.log(escorts)
-       this.setState({ escorts });
-      }
+    
       
       handleEscortDoneUpdate = async id => {
           const escorts = await escortService.updateDoneEscort(id);
@@ -26,11 +22,7 @@ export default class RequestList extends Component {
           this.setState({ escorts });
       }
   
-      handleEditEscort = async (id, data) => {
-          const escorts = await escortService.updateTodo(id, {title: "", ableBodied: true, vehicle: "", walking: "", location: "", selfDefenseTraining: false,availability: "", details: ""});
-          console.log(escorts)
-          this.setState({ escorts, escortToEdit: null });
-      }
+      
   
       handleEdit = async id => {
           const escortToEdit = this.state.escorts.find(function(escort) {
@@ -62,17 +54,16 @@ export default class RequestList extends Component {
         details={details} 
         createdBy={createdBy} 
         timestamps={timestamps}
-        handleAddEscort={this.handleAddEscort}
-        escortToEdit={this.escortToEdit}
-        handleEditEscort={this.handleEditEscort} 
-        handleRemoveEscort={this.handleRemoveEscort}
-        handleEscortDoneUpdate={this.handleEscortDoneUpdate}
-        handleEdit={this.handleEdit}/>
+        />
         );
     return (   
       <>
         <div className="container">{ escorts }</div>
-        <EscortListItem  />
+        <EscortListItem  
+        handleRemoveEscort={this.handleRemoveEscort}
+        handleEscortDoneUpdate={this.handleEscortDoneUpdate}
+        handleEdit={this.handleEdit}
+        />
       </>
     );
   }

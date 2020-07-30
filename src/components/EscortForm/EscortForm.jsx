@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import escortService from '../utils/escortService';
+import './EscortForm.css';
+
 
 export default class EscortForm extends Component {
     state = {
@@ -12,6 +15,8 @@ export default class EscortForm extends Component {
             availability: "", 
             details: ""
     }
+
+    
     
     handleChange = e => {
         this.setState({
@@ -21,12 +26,10 @@ export default class EscortForm extends Component {
 //only edit prop that being changed [e.target.name] computer prop names resulved to specific piece of state being edited ie. typing vehicle will only update vehile
 
     handleSubmit = e => {
+      console.log(e)
         e.preventDefault();
-        //prevent pg refresh
-        this.props.handleAddEscort({title: this.state.title, ablebodied: this.state.ableBodied, vehicle: this.state.vehicle, walking: this.state.walking,
-                                    location: this.state.location, selfDefenseTraining: this.state.selfDefenseTraining, availability: this.state.availability,
-                                    details: this.state.details});
-        //pass new created todo tex to the add todo method
+        this.props.handleAddEscort(this.state);
+        //pass new created escort tex to the add escort method
         this.setState({title: "Homie Escort", 
                         ableBodied: true, 
                         vehicle: "", 
@@ -37,7 +40,7 @@ export default class EscortForm extends Component {
                         details: ""});
         //clear our todo form
     }
-    handleEditEscort = (id, data) => {
+    handleEdit = (id, data) => {
         this.props.handleEditEscort(id, data) 
         this.setState({title: "Homie Escort", 
                         ableBodied: true, 
@@ -111,8 +114,9 @@ export default class EscortForm extends Component {
             <input onChange={this.handleChange} name="availability" value={this.state.availability} />
             <label>Details: </label>
             <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
-          <button>Submit</button><Link to="/">Cancel</Link>
+            <button className="button is-primary">Submit</button><Link to="/">Cancel</Link>  
           </form>  
+          
     }
       </div>
     );

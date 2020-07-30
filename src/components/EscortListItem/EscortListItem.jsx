@@ -4,18 +4,15 @@ import './EscortListItem.css'
 export default props => {
     return (
             <>
-            <li className="requests">
-                <label>Hello! {props.title}</label> 
-                <label>Name: {props.createdBy}</label> 
-                <label>Able Bodied: {props.ableBodied ? "Yes" : "No"}</label>
-                <label>Using a Vehicle: {props.vehicle} </label>
-                <label>Walking: {props.walking}</label> 
-                <label>Location: {props.location}</label> 
-                <label>Self Defense Training: {props.selfDefenseTraining}</label> 
-                <label>availability: {props.availability}</label> 
-                <label>Details: {props.details} </label> 
-                <label>Time: {props.timestamps}</label>            
-            </li>
+            <div>
+        <span onClick={() => props.handleEdit(props.id)}>EDIT</span>
+        <span
+        onClick={() => props.handleRemoveEscort(props.id)}>⛔️</span>
+        <span>{props.text}</span>
+        <span onClick={() => props.handleEscortDoneUpdate(props.id)}>
+            {props.ableBodied ? "✔️" : "❌"}
+            {props.selfDefenseTraining ? "✔️" : "❌"}</span>
+        </div>
         </>
     );
 }
