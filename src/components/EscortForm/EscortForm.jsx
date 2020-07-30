@@ -15,7 +15,7 @@ export default class EscortForm extends Component {
     
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.value, 
+            [e.target.name]: e.target.value 
         });
     }
 //only edit prop that being changed [e.target.name] computer prop names resulved to specific piece of state being edited ie. typing vehicle will only update vehile
@@ -27,7 +27,7 @@ export default class EscortForm extends Component {
                                     location: this.state.location, selfDefenseTraining: this.state.selfDefenseTraining, availability: this.state.availability,
                                     details: this.state.details});
         //pass new created todo tex to the add todo method
-        this.setState({title: "I'm a Homie", 
+        this.setState({title: "Homie Escort", 
                         ableBodied: true, 
                         vehicle: "", 
                         walking: "",
@@ -39,7 +39,7 @@ export default class EscortForm extends Component {
     }
     handleEditEscort = (id, data) => {
         this.props.handleEditEscort(id, data) 
-        this.setState({title: "I'm a Homie", 
+        this.setState({title: "Homie Escort", 
                         ableBodied: true, 
                         vehicle: "", 
                         walking: "",
@@ -53,7 +53,7 @@ export default class EscortForm extends Component {
     render() {
     return(
       <div>
-          {this.props.todoEdit ?
+          {this.props.escortToEdit ?
           <>
           
             <input onChange={ this.handleChange } 
@@ -96,21 +96,21 @@ export default class EscortForm extends Component {
           </>
           :
           <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} value={this.state.title} />
+            <input onChange={this.handleChange} name="title" value={this.state.title} />
             <label>Able Bodied:</label>
-            <input onChange={this.handleChange} value={this.state.ableBodied} />
+            <input onChange={this.handleChange} name="ableBodied" value={this.state.ableBodied} />
             <label>Vehicle:</label>
-            <input onChange={this.handleChange} value={this.state.vehicle} />
+            <input onChange={this.handleChange} name="vehicle" value={this.state.vehicle} />
             <label>Walking:</label>
-            <input onChange={this.handleChange} value={this.state.walking} />
+            <input onChange={this.handleChange} name="walking" value={this.state.walking} />
             <label>Location:</label>
-            <input onChange={this.handleChange} value={this.state.location} />
+            <input onChange={this.handleChange} name="location" value={this.state.location} />
             <label>Self Defense Training: </label>
-            <input onChange={this.handleChange} value={this.state.selfDefenseTraining} />
+            <input onChange={this.handleChange} name="selfDefenseTraining" value={this.state.selfDefenseTraining} />
             <label>Availability: </label>
-            <input onChange={this.handleChange} value={this.state.availability} />
+            <input onChange={this.handleChange} name="availability" value={this.state.availability} />
             <label>Details: </label>
-            <textarea onChange={this.handleChange} value={this.state.details} /> <br/><br/>
+            <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
           <button>Submit</button><Link to="/">Cancel</Link>
           </form>  
     }

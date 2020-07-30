@@ -33,7 +33,7 @@ render() {
   return (
     <div className="App">
       <header className="App-header">
-        React GYB <NavBar user={this.props.user} handleLogout={this.props.handleLogout} />
+        React GYB <NavBar user={this.state.user} handleLogout={this.handleLogout} />
       </header>
       
       <Switch>
