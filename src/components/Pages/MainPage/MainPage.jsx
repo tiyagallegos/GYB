@@ -5,6 +5,7 @@ import Footer from '../../Footer/Footer';
 import RequestForm from '../../RequestForm/RequestForm';
 import EscortForm from '../../EscortForm/EscortForm';
 import EscortList from '../../EscortList/EscortList';
+import EscortListId from '../../EscortList/showEscortId';
 import './MainPage.css'
 
 
@@ -18,8 +19,10 @@ const MainPage = (props) => {
         <Link  className="mainPageLinks" to='/escortForm'>Be a Homie </Link>
         </div>
       <div className="mainPage">
-        <RequestList />
-        {props.escorts}    
+        <RequestList escorts={props.escorts} />
+        <EscortList escorts={props.escorts} user={props.user} history={props.history} />
+       
+            
       </div>
         <Footer />
     </>

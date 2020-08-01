@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import EscortListItem from '../EscortListItem/EscortListItem';
 import EscortForm from '../EscortForm/EscortForm';
 import escortService from '../utils/escortService';
+import './Escortlist.css';
+import { Link } from 'react-router-dom';
+import EscortListId from './showEscortId';
 
 
 export default class RequestList extends Component {
     state = {
-        escorts: [],
-        escortToEdit: null
+        
     };
 
     
@@ -25,47 +27,39 @@ export default class RequestList extends Component {
       
   
       handleEdit = async id => {
-          const escortToEdit = this.state.escorts.find(function(escort) {
+          const escortToEdit = await this.state.escorts.find(function(escort) {
               return escort._id === id;
           })
        this.setState({ escortToEdit });
       }
+
+      showEscort = async (id, data) => {
+        const escortToShow = await this.state.escorts.find(function(escort) {
+            return escort._id === id, data;
+        })
+        this.setState({escortToShow});
+    } 
   
       //lifecycle method--gets auto called by react durign a specific phase
-      async componentDidMount() {
-          const escorts = await escortService.getEscorts()
-          this.setState({escorts});
-      }
+      
       
 
 
     render () {
       
-      const escorts = this.state.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
-                            availability, details, title, createdBy, timestamps}) =>
-        <EscortForm
-        key={_id} 
-        title={title} 
-        ableBodied={ableBodied} 
-        vehicle={vehicle} 
-        walking={walking} 
-        location={location} 
-        selfDefenseTraining={selfDefenseTraining} 
-        availability={availability}
-        details={details} 
-        createdBy={createdBy} 
-        timestamps={timestamps}/>
-        );
-
+      const escorts = this.props.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
+                            availability, details, title, createdAt, timestamps}) =>
+        <Link to={`/escorts/${_id}`} className="container" key={_id} >
+        <h1>Title:{title}</h1>
+        <p>Created At:{createdAt.toLocaleString()}</p>
         
+        </Link>
+        );
     return (   
       <>
-        <div className="container">{ escorts }</div>
-        <EscortListItem  
-      handleRemoveEscort={this.handleRemoveEscort}
-      handleEscortDoneUpdate={this.handleEscortDoneUpdate}
-      handleEdit={this.handleEdit}
-      />
+        <div >{escorts}</div>
+        
+        
       </>
     );
   }

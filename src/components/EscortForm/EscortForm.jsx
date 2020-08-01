@@ -41,7 +41,10 @@ export default class EscortForm extends Component {
                         location: "",
                         selfDefenseTraining: false,
                         availability: "", 
-                        details: ""});
+                        details: ""}, () => {
+                        this.props.history.push("/")
+                        });
+                      
         //clear our todo form
     }
     handleEdit = (id, data) => {
@@ -121,7 +124,7 @@ export default class EscortForm extends Component {
             <label>Details: </label>
             <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
             <button className="button is-primary">Submit</button>
-            <br/><Link className="ecancel button is-primary" to="/">Cancel</Link>  
+            <br/><Link className="ecancel" to="/">Cancel</Link>  
           </form>  
           
           </div>

@@ -9,6 +9,7 @@ import LoginPage from '../src/components/Pages/LoginPage/LoginPage';
 import RequestForm from './components/RequestForm/RequestForm';
 import EscortForm from '../src/components/EscortForm/EscortForm';
 import NavBar from './components/NavBar/NavBar';
+import EscortListId from './components/EscortList/showEscortId';
 
 
 class App extends Component {
@@ -44,6 +45,11 @@ handleSignupOrLogin = () => {
   this.setState({ user: userService.getUser() });
 }
 
+async componentDidMount() {
+  const escorts = await escortService.getEscorts()
+  this.setState({escorts});
+}
+
 render() {
   return (
     <>
@@ -52,11 +58,17 @@ render() {
       
       
       <Switch>
-          <Route exact path='/' render={() =>
+          <Route exact path='/' render={(props) =>
             <MainPage 
+            {...props}
               handleLogout={this.handleLogout}
               user={this.state.user}
               escorts={this.state.escorts} />
+            }/>
+            <Route exact path='/escorts/:id' render={(props) =>
+            <EscortListId 
+            {...props}
+            escort={this.state.escorts.find(escort => escort._id === props.match.params.id)}/>
             }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage
@@ -68,18 +80,19 @@ render() {
               handleSignupOrLogin={this.handleSignupOrLogin}
               history={history}/>
             }/>
-            <Route exact path='/requestForm' render={() => 
+            <Route exact path='/requestForm' render={(props) => 
                 userService.getUser() ? 
-                <RequestForm />
+                <RequestForm {...props}/>
                 :
                 <Redirect to='login' />
             }/>
-            <Route exact path='/escortForm' render={() => 
+            <Route exact path='/escortForm' render={(props) => 
                 userService.getUser() ? 
-                <EscortForm 
+                <EscortForm {...props}
                 handleAddEscort={this.handleAddEscort}
                 escortToEdit={this.escortToEdit}
                 handleEditEscort={this.handleEditEscort} 
+                escorts={this.state.escorts} 
                 />
                 :
                 <Redirect to='login' />

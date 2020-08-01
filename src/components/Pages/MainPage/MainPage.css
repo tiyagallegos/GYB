@@ -1,18 +1,14 @@
 .mainPageLinks {
     color: white;
-    text-decoration: none;
-    border-radius: 10px;
-  
+    text-decoration: none;  
     text-shadow: 1px 1px 1px rgb(52, 50, 47);  
-
     text-transform: uppercase;
     
 }
 
 .mainPageLinks:hover {
-    color: whitesmoke;
+    color: goldenrod;
     text-decoration: none;
-    background-image: -webkit-linear-gradient(top, rgb(250, 220, 47), rgb(143, 103, 2));  
     text-shadow: 1px 1px 1px rgb(52, 50, 47);  
     text-emphasis: bold;
     box-shadow: 6px 5px 24px #d3ab0c;

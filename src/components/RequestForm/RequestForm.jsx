@@ -8,7 +8,7 @@ const RequestForm = () => {
       <>
       <div className="rform">
       <form className="requestForm">
-        <header>Request a Homie</header>
+        <header className="rHeader">Request a Homie</header> <br/>
         <label>Able Bodied Y/N: </label>
         <input placeholder="Y"/>
         <label>Danger Level: </label>
@@ -17,7 +17,7 @@ const RequestForm = () => {
         <input placeholder="Denver"/>
         <label>Details: </label>
         <input placeholder="waiting by stop sign outside Sprouts"/><br/>
-        <button>Submit</button> <Link to="/">Cancel</Link>
+        <button className="rbutton">Submit</button> <Link className="rbutton" to="/">Cancel</Link>
       </form>
       </div>
       <Footer/>
