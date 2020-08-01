@@ -22,8 +22,8 @@ class App extends Component {
   }
 
 
-handleAddEscort = async escort => {
-    const escorts = await escortService.createEscort(escort)
+handleAddEscort = async (escort, id) => {
+    const escorts = await escortService.createEscort(escort, id)
     console.log(escorts)
     this.setState({ escorts });
    }
@@ -48,9 +48,8 @@ render() {
   return (
     <>
     <div className="App">
-      <header className="App-header">
-        React GYB <NavBar user={this.state.user} handleLogout={this.handleLogout} />
-      </header>
+    <NavBar user={this.state.user} handleLogout={this.handleLogout} />
+      
       
       <Switch>
           <Route exact path='/' render={() =>

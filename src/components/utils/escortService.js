@@ -1,15 +1,16 @@
 
 
 
-const baseURL = '/api/escorts';
+const baseURL = '/api/users';
+
 
 
 function getEscorts() {
     return fetch(baseURL).then(response => response.json());
 }
 
-function createEscort(data) {
-    return fetch(baseURL, {
+function createEscort(data, id) {
+    return fetch(baseURL + `/${id}` + "/escorts", {
         method: 'POST',
         headers: {
             'Content-type': 'Application/json'

@@ -4,11 +4,13 @@ import './NavBar.css';
 
 const NavBar = (props) => {
   return (
-    <div className='NavBar'>
+  <nav>
+  <div className='NavBar'>
+      <Link to="/" className="title">Got Yo Back</Link>
       {props.user ?
       <div>
         <Link to="" onClick={props.handleLogout} className="NavBar-link">LOG OUT</Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
+       
         <span className="NavBar-welcome">Welcome, {props.user.name}!</span>
         </div>  
       :
@@ -19,7 +21,13 @@ const NavBar = (props) => {
       </div>    
     }
     </div>
+    </nav>
+    
   );
 };
 
 export default NavBar;
+
+
+      
+        

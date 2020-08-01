@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import escortService from '../utils/escortService';
 import './EscortForm.css';
+import userService from '../utils/userService';
 
 
 export default class EscortForm extends Component {
@@ -28,7 +29,9 @@ export default class EscortForm extends Component {
     handleSubmit = e => {
       console.log(e)
         e.preventDefault();
-        this.props.handleAddEscort(this.state);
+        const userId = userService.getUser()._id
+        console.log(userId) 
+        this.props.handleAddEscort(this.state, userId);
         //pass new created escort tex to the add escort method
         this.setState({title: "Homie Escort", 
                         ableBodied: true, 

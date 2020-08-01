@@ -18,9 +18,11 @@ async function index(req, res) {
 }
 async function create(req, res) {
    try {
+       req.body.createdBy = req.params.id
     await Escort.create(req.body)
     index(req, res);
 } catch (error) {
+    console.log(error)
     res.status(400).json({message: "something went wrong"});
     }
 }
