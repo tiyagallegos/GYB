@@ -55,7 +55,8 @@ render() {
           <Route exact path='/' render={() =>
             <MainPage 
               handleLogout={this.handleLogout}
-              user={this.state.user} />
+              user={this.state.user}
+              escorts={this.state.escorts} />
             }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage

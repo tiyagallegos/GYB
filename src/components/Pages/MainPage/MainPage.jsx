@@ -11,18 +11,19 @@ import './MainPage.css'
 
 const MainPage = (props) => {
   return (
-    <div>
-      <div>
-        <Link to='/requestForm' > Request a Homie  </Link> 
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <Link  to='/escortForm'>Be a Homie </Link>
+    <>
+    <div className="mainPageLinksSection">
+        <Link className="mainPageLinks" to='/requestForm' > Request a Homie  </Link> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link  className="mainPageLinks" to='/escortForm'>Be a Homie </Link>
+        </div>
+      <div className="mainPage">
         <RequestList />
-        <EscortList />      
+        {props.escorts}    
       </div>
         <Footer />
-    </div>
+    </>
   );
-
 };
 
 export default MainPage;

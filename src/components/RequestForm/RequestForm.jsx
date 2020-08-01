@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './RequestForm.css'
+import Footer from '../Footer/Footer';
 
 const RequestForm = () => {
     return (
-      <form>
+      <>
+      <div className="rform">
+      <form className="requestForm">
         <header>Request a Homie</header>
         <label>Able Bodied Y/N: </label>
         <input placeholder="Y"/>
@@ -15,6 +19,9 @@ const RequestForm = () => {
         <input placeholder="waiting by stop sign outside Sprouts"/><br/>
         <button>Submit</button> <Link to="/">Cancel</Link>
       </form>
+      </div>
+      <Footer/>
+      </>
     ); 
   }
 

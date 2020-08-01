@@ -1,0 +1,40 @@
+.mainPageLinks {
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+  
+    text-shadow: 1px 1px 1px rgb(52, 50, 47);  
+
+    text-transform: uppercase;
+    
+}
+
+.mainPageLinks:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    background-image: -webkit-linear-gradient(top, rgb(250, 220, 47), rgb(143, 103, 2));  
+    text-shadow: 1px 1px 1px rgb(52, 50, 47);  
+    text-emphasis: bold;
+    box-shadow: 6px 5px 24px #d3ab0c;
+    text-transform: uppercase;
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    background-image: url(http://cubmagazine.co.uk/wp-content/uploads/2020/06/man-s-hand-in-shallow-focus-and-grayscale-photography-167964-768x460.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+    
+
+}
+.mainPageLinksSection {
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px solid  black;
+    background: -webkit-linear-gradient(top, rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%); 
+}

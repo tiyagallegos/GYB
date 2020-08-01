@@ -40,6 +40,7 @@ export default class RequestList extends Component {
 
 
     render () {
+      
       const escorts = this.state.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
                             availability, details, title, createdBy, timestamps}) =>
         <EscortForm
@@ -53,17 +54,18 @@ export default class RequestList extends Component {
         availability={availability}
         details={details} 
         createdBy={createdBy} 
-        timestamps={timestamps}
-        />
+        timestamps={timestamps}/>
         );
+
+        
     return (   
       <>
         <div className="container">{ escorts }</div>
         <EscortListItem  
-        handleRemoveEscort={this.handleRemoveEscort}
-        handleEscortDoneUpdate={this.handleEscortDoneUpdate}
-        handleEdit={this.handleEdit}
-        />
+      handleRemoveEscort={this.handleRemoveEscort}
+      handleEscortDoneUpdate={this.handleEscortDoneUpdate}
+      handleEdit={this.handleEdit}
+      />
       </>
     );
   }

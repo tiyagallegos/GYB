@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import escortService from '../utils/escortService';
 import './EscortForm.css';
 import userService from '../utils/userService';
+import Footer from '../Footer/Footer';
 
 
 export default class EscortForm extends Component {
@@ -101,25 +102,29 @@ export default class EscortForm extends Component {
             <button onClick={() => this.handleEditEscort()}>EDIT</button>
           </>
           :
-          <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} name="title" value={this.state.title} />
+          <div className="eform">
+          <form className="escortForm " onSubmit={this.handleSubmit}>
+            <label>Title:</label>
+            <input onChange={this.handleChange} name="title" value={this.state.title} /> <br/>
             <label>Able Bodied:</label>
-            <input onChange={this.handleChange} name="ableBodied" value={this.state.ableBodied} />
+            <input onChange={this.handleChange} name="ableBodied" value={this.state.ableBodied} /><br/>
             <label>Vehicle:</label>
-            <input onChange={this.handleChange} name="vehicle" value={this.state.vehicle} />
+            <input onChange={this.handleChange} name="vehicle" value={this.state.vehicle} /><br/>
             <label>Walking:</label>
-            <input onChange={this.handleChange} name="walking" value={this.state.walking} />
+            <input onChange={this.handleChange} name="walking" value={this.state.walking} /><br/>
             <label>Location:</label>
-            <input onChange={this.handleChange} name="location" value={this.state.location} />
+            <input onChange={this.handleChange} name="location" value={this.state.location} /><br/>
             <label>Self Defense Training: </label>
-            <input onChange={this.handleChange} name="selfDefenseTraining" value={this.state.selfDefenseTraining} />
+            <input onChange={this.handleChange} name="selfDefenseTraining" value={this.state.selfDefenseTraining} /><br/>
             <label>Availability: </label>
-            <input onChange={this.handleChange} name="availability" value={this.state.availability} />
+            <input onChange={this.handleChange} name="availability" value={this.state.availability} /><br/>
             <label>Details: </label>
             <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
-            <button className="button is-primary">Submit</button><Link to="/">Cancel</Link>  
+            <button className="button is-primary">Submit</button>
+            <br/><Link className="ecancel button is-primary" to="/">Cancel</Link>  
           </form>  
           
+          </div>
     }
       </div>
     );

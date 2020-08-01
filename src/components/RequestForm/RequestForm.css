@@ -1,0 +1,33 @@
+.rbutton {
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 50px;
+    height: 50px;
+}
+
+.rcancel {
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 35px;
+    height: 50px;
+    text-decoration: none;
+}
+
+.requesttForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 100vh;
+    border: 5px solid rebeccapurple;
+    background-color: rgb(235, 214, 255);
+
+}
+
+.rform {
+    display: flex;
+    background-color: rgb(235, 214, 255);
+    flex-grow: 1;
+}

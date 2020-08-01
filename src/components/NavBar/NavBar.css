@@ -1,15 +1,69 @@
 .NavBar {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 0 0 20px;
-    background-color: purple;
+    align-items: center;
+    height: 5rem;
+    color: black;
+    text-decoration: none;
   }
+
+  .NavBar:hover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    
+    text-decoration: none;
+  }
+ 
   
   .NavBar-link {
-    margin: 0 10px;
+    margin: 50;
+    color: black;
+    text-decoration: none;
+    
   }
   
   .NavBar-welcome {
-    color: grey;
+    color: black;
     
   }
+  .navPages:hover{
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+  }
+
+  .NavBar-link:hover{
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+  }
+
+  .title {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 70px;
+    text-align: center;
+    color: black;
+  }
+
+  .title:hover {
+    text-decoration: none;
+    color: goldenrod;
+    font-weight: 900;
+    font-size: 70px;
+    text-align: center;
+    text-shadow: 1px 1px 1px goldenrod;  
+    box-shadow: 6px 5px 24px #cb9521;
+  }
+
+ .navPages {
+   text-decoration: none;
+   color: black;
+
+ }
