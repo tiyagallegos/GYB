@@ -6,13 +6,13 @@ const NavBar = (props) => {
   return (
   <nav>
   <div className='NavBar'>
-      <Link to="/" className="title">Got Yo Back</Link>
-      <Link to="/" className="navPages">About Us</Link>
-      <Link to="/" className="navPages">Donations</Link>
-      <Link to="/" className="navPages">Resources</Link>
+      <Link to="/" className="title">Got Yo Back</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/aboutus" className="navPages">About Us</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/donations" className="navPages">Donations</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/resources" className="navPages">Resources</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {props.user ?
       <div>
-        <span className="NavBar-welcome">Welcome, {props.user.name}!</span>
+        <span className="NavBar-welcome">Welcome, {props.user.name}!</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Link to="" onClick={props.handleLogout} className="NavBar-link">LOG OUT</Link>
        
         </div>  

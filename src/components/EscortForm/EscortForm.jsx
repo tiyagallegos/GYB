@@ -106,7 +106,8 @@ export default class EscortForm extends Component {
           </>
           :
           <div className="eform">
-          <form className="escortForm " onSubmit={this.handleSubmit}>
+          <form className="escortForm " onSubmit={this.handleSubmit}><br/><br/><br/><br/>
+          <header className="eHeader">Be A Homie</header><br/><br/><br/>
             <label>Title:</label>
             <input onChange={this.handleChange} name="title" value={this.state.title} /> <br/>
             <label>Able Bodied:</label>
@@ -123,7 +124,7 @@ export default class EscortForm extends Component {
             <input onChange={this.handleChange} name="availability" value={this.state.availability} /><br/>
             <label>Details: </label>
             <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
-            <button className="button is-primary">Submit</button>
+            <button className="button is-primary">Submit</button><br/><br/>
             <Link className="ecancel" to="/">Cancel</Link>  
           </form>  
           
