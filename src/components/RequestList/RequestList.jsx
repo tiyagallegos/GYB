@@ -4,22 +4,7 @@ import './RequestList.css';
 
 export default class RequestList extends Component {
     state = {
-        requests: [
-            {_id: 1, 
-            ableBodied: true, 
-            dangerLevel: "Low", 
-            location: "Denver", 
-            details: "near stop sign outside of Sprouts",
-            createdBy: "Tiya",
-            timestamps: true  },
-            {_id: 2, 
-                ableBodied: false, 
-                dangerLevel: "High", 
-                location: "Denver", 
-                details: "downtown",
-                createdBy: "jojo",
-                timestamps: true  }
-        ]
+        requests: []
 
     }
     render () {

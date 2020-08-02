@@ -124,7 +124,7 @@ export default class EscortForm extends Component {
             <label>Details: </label>
             <textarea onChange={this.handleChange} name="details" value={this.state.details} /> <br/><br/>
             <button className="button is-primary">Submit</button>
-            <br/><Link className="ecancel" to="/">Cancel</Link>  
+            <Link className="ecancel" to="/">Cancel</Link>  
           </form>  
           
           </div>

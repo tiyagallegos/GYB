@@ -15,16 +15,18 @@ const MainPage = (props) => {
     <>
     <div className="mainPageLinksSection">
         <Link className="mainPageLinks" to='/requestForm' > Request a Homie  </Link> 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <Link  className="mainPageLinks" to='/escortForm'>Be a Homie </Link>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link className="mainPageLinks" to="/escorts">All Homies</Link>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link className="mainPageLinks" to="/requests">All Requests</Link>
         </div>
       <div className="mainPage">
         <RequestList escorts={props.escorts} />
+        
         <EscortList escorts={props.escorts} user={props.user} history={props.history} />
-       
-            
       </div>
-        <Footer />
     </>
   );
 };

@@ -10,6 +10,8 @@ import RequestForm from './components/RequestForm/RequestForm';
 import EscortForm from '../src/components/EscortForm/EscortForm';
 import NavBar from './components/NavBar/NavBar';
 import EscortListId from './components/EscortList/showEscortId';
+import Footer from '../src/components/Footer/Footer';
+import EscortList from '../src/components/EscortList/EscortList';
 
 
 class App extends Component {
@@ -70,6 +72,9 @@ render() {
             {...props}
             escort={this.state.escorts.find(escort => escort._id === props.match.params.id)}/>
             }/>
+            <Route exact path='/escorts' render={(props) => 
+            <EscortList {...props}/>
+            }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage
                 history={history}
@@ -98,6 +103,7 @@ render() {
                 <Redirect to='login' />
             }/>
       </Switch>
+      <Footer />
     </div>
     </>
     );

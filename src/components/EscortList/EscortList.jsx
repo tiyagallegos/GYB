@@ -46,18 +46,18 @@ export default class RequestList extends Component {
 
 
     render () {
-      
+    
       const escorts = this.props.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
                             availability, details, title, createdAt, timestamps}) =>
-        <Link to={`/escorts/${_id}`} className="container" key={_id} >
-        <h1>Title:{title}</h1>
-        <p>Created At:{createdAt.toLocaleString()}</p>
+        <Link to={`/escorts/${_id}`} className="eRequests" key={_id} >
+        <h3>Title:{title}</h3>
+        <h4>Posted At:{createdAt.toLocaleString()}</h4>
         
         </Link>
         );
     return (   
       <>
-        <div >{escorts}</div>
+        <div className="container">{escorts}</div>
         
         
       </>
