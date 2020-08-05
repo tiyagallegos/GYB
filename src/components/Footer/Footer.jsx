@@ -10,10 +10,6 @@ export default function Footer() {
     return (
         <footer className={styles.Footer}>
             <section>
-            <Link to="/aboutus" className="navPages">About Us</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/donations" className="navPages">Donations</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <Link to="/resources" className="navPages">Resources</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</section>
-            <section>
                 Copyright &copy; {new Date().getFullYear()}            
             </section>
             <section>

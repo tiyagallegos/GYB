@@ -1,7 +1,7 @@
-.SignupPage {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-  }
+
+
+   
+  .supHeader {
+    font-weight: 800;
+    font-size: 40px;
+}
