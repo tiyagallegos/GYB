@@ -19,11 +19,13 @@ export default props => {
             
         
        
-            <Link to={`/escorts/${props.escort._id}/edit`} onClick={() => props.handleEdit(props.id)}>✏️</Link>   
-        <span
-        onClick={() => props.handleRemoveEscort(props.id)}>⛔️</span>
-        <span>{props.text}</span>
+        <Link className="editLink" to={`/escorts/${props.escort._id}/edit`} onClick={() => props.handleEdit(props.id)}>✏️</Link>
+
+        <span className="deleteEscortButton" onClick={() => props.handleRemoveEscort(props.escort._id)}>⛔️</span>
+        
         <Link className="backLink" to="/">Back</Link></div>
         </div>
     );
 }
+
+

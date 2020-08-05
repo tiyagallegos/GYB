@@ -25,6 +25,11 @@ class App extends Component {
     };
   }
 
+handleRemoveEscort = async id => {
+    const escorts = await escortService.removeEscort(id);
+    this.props.history.push('/')
+    this.setState({ escorts });
+  } 
 
 handleAddEscort = async (escort, id) => {
     const escorts = await escortService.createEscort(escort, id)
@@ -32,7 +37,7 @@ handleAddEscort = async (escort, id) => {
     this.setState({ escorts });
    }
 
-   handleEditEscort = async (id, data) => {
+handleEditEscort = async (id, data) => {
     const escorts = await escortService.updateEscort(id, data);
     console.log(escorts)
     this.setState({ escorts, escortToEdit: null });
@@ -89,6 +94,7 @@ render() {
             <ShowEscortId
             {...props}
             escortToEdit={this.state.escortToEdit}
+            handleRemoveEscort={this.handleRemoveEscort}
             handleEdit={this.handleEdit}
             escorts={this.state.escorts} 
             handleEditEscort={this.handleEditEscort}
@@ -125,8 +131,8 @@ render() {
                 <Redirect to='login' />
             }/>
       </Switch>
-      <Footer />
     </div>
+      <Footer />
     </>
     );
   }

@@ -24,6 +24,19 @@ const NavBar = (props) => {
       </div>    
     }
     </div>
+    <div className="mainPageLinksSection">
+        <Link className="mainPageLinks" to='/requestForm' > Request a Homie  </Link> 
+        
+        <Link  className="mainPageLinks" to='/escortForm'>Be a Homie </Link>
+        
+        <Link className="mainPageLinks" to="/escorts">All Homies</Link>
+        
+        <Link className="mainPageLinks" to="/requests">All Requests</Link>
+        </div>
+
+        <div className="menu-btn">
+            <div className="menu-btn-burger"></div>
+        </div>
     </nav>
     
   );

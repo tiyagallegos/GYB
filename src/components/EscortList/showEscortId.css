@@ -2,7 +2,11 @@
     color: white;
     background-color: black;
     text-decoration: none;
-    
+}
+.editLink {
+    color: white;
+    background-color: black;
+    text-decoration: none;
 }
 
 .backLink:hover {
@@ -13,6 +17,13 @@
     text-decoration: none;
 }
 
+.editLink:hover {
+    background-color: black;
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+    text-decoration: none;
+}
 
 
 .escortId {
@@ -35,4 +46,13 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+}
+
+.deleteEscortButton:hover {
+    cursor: pointer;
+    background-color: black;
+    color: goldenrod;
+    text-shadow: 1px 1px 1px rgb(114, 86, 15);
+    box-shadow: 6px 5px 24px #cb9521;
+    text-decoration: none;
 }

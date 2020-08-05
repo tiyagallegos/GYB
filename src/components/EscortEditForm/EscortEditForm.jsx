@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './EscortEditForm.css';
+import { Link } from 'react-router-dom';
 
 
 export default class EscortEditForm extends Component {
@@ -34,7 +36,8 @@ handleEdit = (e) => {
 render(){
     return (
         <>
-        <form className="EditEscortForm " onSubmit={this.handleEdit}><br/><br/><br/><br/>
+        <div className="editform">
+        <form className="EditEscortForm" onSubmit={this.handleEdit}><br/><br/><br/><br/>
           <header className="eHeader">Edit Post</header><br/><br/><br/>
             <label>Title: </label>
             <input onChange={ this.handleChange } 
@@ -56,26 +59,28 @@ render(){
             value={this.state.walking}
             name="walking"
              />
-
+            <label>Self Defense Training: </label>
             <input onChange={ this.handleChange } 
             value={this.state.selfDefenseTraining}
             name="selfDefenseTraining"
              />
-
+            <label>Availability: </label>
             <input onChange={ this.handleChange } 
             value={this.state.availability}
             name="availability"
              />
-
-            <input onChange={ this.handleChange } 
+            <label>Details: </label>
+            <textarea onChange={ this.handleChange } 
             value={this.state.details}
             name="details"
              />
 
   
-            <button>EDIT</button>
+            <button className="editButton">EDIT</button>
+            <Link className="editCancel" to="/">Cancel</Link> 
             
             </form>
+            </div>
         </>
      );
     }
