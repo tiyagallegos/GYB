@@ -25,7 +25,7 @@ const MainPage = (props) => {
       <div className="mainPage">
         <RequestList escorts={props.escorts} />
         
-        <EscortList escorts={props.escorts} user={props.user} history={props.history} />
+        <EscortList escorts={props.escorts} user={props.user} history={props.history} handleEditEscort={props.handleEditEscort} />
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './EscortList';
 import { Link } from 'react-router-dom';
 import './showEscortId.css';
@@ -19,7 +19,7 @@ export default props => {
             
         
        
-            <span onClick={() => props.handleEdit(props.id)}>✏️</span>   
+            <Link to={`/escorts/${props.escort._id}/edit`} onClick={() => props.handleEdit(props.id)}>✏️</Link>   
         <span
         onClick={() => props.handleRemoveEscort(props.id)}>⛔️</span>
         <span>{props.text}</span>

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import escortService from '../utils/escortService';
+import { Link } from 'react-router-dom';
 import './EscortForm.css';
 import userService from '../utils/userService';
-import Footer from '../Footer/Footer';
+
 
 
 export default class EscortForm extends Component {
@@ -47,17 +46,7 @@ export default class EscortForm extends Component {
                       
         //clear our todo form
     }
-    handleEdit = (id, data) => {
-        this.props.handleEditEscort(id, data) 
-        this.setState({title: "Homie Escort", 
-                        ableBodied: true, 
-                        vehicle: "", 
-                        walking: "",
-                        location: "",
-                        selfDefenseTraining: false,
-                        availability: "", 
-                        details: ""             })
-    }
+  
 
 
     render() {

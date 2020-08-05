@@ -17,10 +17,9 @@ const RequestForm = () => {
         <input placeholder="Denver"/>
         <label>Details: </label>
         <input placeholder="waiting by stop sign outside Sprouts"/><br/>
-        <button className="rbutton">Submit</button> <Link className="rbutton" to="/">Cancel</Link>
+        <button className="rbutton">Submit</button> <br/><Link className="rcancel" to="/">Cancel</Link>
       </form>
       </div>
-      <Footer/>
       </>
     ); 
   }

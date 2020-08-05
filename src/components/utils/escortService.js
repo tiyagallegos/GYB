@@ -26,14 +26,14 @@ function updateDoneEscort(id) {
 }
 
 function removeEscort(id) {
-    return fetch(baseURL + "/" + id, {
+    return fetch(baseURL + "/" + id + "/escorts", {
         method: 'DELETE'
     }).then(response => response.json());
 }
 
 function updateEscort(id, data) {
     console.log(data)
-    return fetch(baseURL + "/" + id + "/edit", {
+    return fetch(baseURL + "/" + id + "/escorts/edit", {
         method: 'PUT',
         headers: {
             'Content-type': 'Application/json'

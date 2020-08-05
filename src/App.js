@@ -12,7 +12,8 @@ import NavBar from './components/NavBar/NavBar';
 import EscortListId from './components/EscortList/showEscortId';
 import Footer from '../src/components/Footer/Footer';
 import EscortList from '../src/components/EscortList/EscortList';
-
+import EscortEditForm from '../src/components/EscortEditForm/EscortEditForm';
+import ShowEscortId from './components/EscortList/showEscortId';
 
 class App extends Component {
   constructor() {
@@ -32,10 +33,17 @@ handleAddEscort = async (escort, id) => {
    }
 
    handleEditEscort = async (id, data) => {
-    const escorts = await escortService.updateEscort(id, data.escort);
+    const escorts = await escortService.updateEscort(id, data);
     console.log(escorts)
     this.setState({ escorts, escortToEdit: null });
 }
+handleEdit = async id => {
+  const escortToEdit = await this.state.escorts.find(function(escort) {
+      return escort._id === id;
+  })
+this.setState({ escortToEdit });
+}
+
 
 
 handleLogout = () => {
@@ -64,12 +72,26 @@ render() {
             <MainPage 
             {...props}
               handleLogout={this.handleLogout}
+              
               user={this.state.user}
               escorts={this.state.escorts} />
             }/>
-            <Route exact path='/escorts/:id' render={(props) =>
-            <EscortListId 
+            <Route exact path='/escorts/:id/edit' render={(props) =>
+            <EscortEditForm  
             {...props}
+            escortToEdit={this.state.escortToEdit}
+            handleEdit={this.handleEdit}
+            handleEditEscort={this.handleEditEscort}
+            escorts={this.state.escorts} 
+            escort={this.state.escorts.find(escort => escort._id === props.match.params.id)}/>
+            }/>
+            <Route exact path='/escorts/:id' render={(props) =>
+            <ShowEscortId
+            {...props}
+            escortToEdit={this.state.escortToEdit}
+            handleEdit={this.handleEdit}
+            escorts={this.state.escorts} 
+            handleEditEscort={this.handleEditEscort}
             escort={this.state.escorts.find(escort => escort._id === props.match.params.id)}/>
             }/>
             <Route exact path='/escorts' render={(props) => 
