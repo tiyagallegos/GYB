@@ -25,3 +25,8 @@
     flex-direction: row;
     font-size: 0.2rem;
 }
+
+.eTitle {
+    color: goldenrod;
+    font-weight: 800;
+}

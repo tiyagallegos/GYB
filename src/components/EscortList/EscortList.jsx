@@ -48,9 +48,8 @@ export default class EscortList extends Component {
         );
     return (   
       <>
+        <div className="eTitle">Homies</div>
         <div className="container">{escorts}</div>
-        
-        
       </>
     );
   }

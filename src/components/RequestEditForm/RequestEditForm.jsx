@@ -9,13 +9,9 @@ handleEdit = (e) => {
     const requestId = this.state._id;
         e.preventDefault();
         this.props.handleEditRequest(requestId, this.state) 
-        this.setState({title: "Homie Escort", 
+        this.setState({ title: "", 
                         ableBodied: true, 
-                        vehicle: "", 
-                        walking: "",
                         location: "",
-                        selfDefenseTraining: false,
-                        availability: "", 
                         details: ""             },
           function () {
             this.props.history.push(`/requests/${requestId}`)

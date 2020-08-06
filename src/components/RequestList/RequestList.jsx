@@ -41,7 +41,8 @@ export default class RequestList extends Component {
         console.log(requests);
     return (   
           <>
-          <div className="rcontainer">{requests}</div>
+          <div className="rTitle">Requests</div>
+          <div className="requestListContainer">{requests}</div>
           </>
       );
     }
