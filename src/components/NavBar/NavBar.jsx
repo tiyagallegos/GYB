@@ -9,7 +9,7 @@ const NavBar = (props) => {
   <div className='NavBar'>
       <Link to="/" className="title">Got Yo Back</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/aboutus" className="navPages">About Us</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <Link to="/donations" className="navPages">Donations</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <Link to="/donations" className="navPages">Donate</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <Link to="/resources" className="navPages">Resources</Link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       {props.user ?
       <div>

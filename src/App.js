@@ -106,7 +106,7 @@ render() {
             <MainPage 
             {...props}
               handleLogout={this.handleLogout}
-              
+              requests={this.state.requests}
               user={this.state.user}
               escorts={this.state.escorts} />
             }/>
@@ -149,10 +149,14 @@ render() {
             request={this.state.requests.find(request => request._id === props.match.params.id)}/>
             }/>
             <Route exact path='/escorts' render={(props) => 
-            <EscortList {...props}/>
+            <EscortList {...props}
+            escorts={this.state.escorts} 
+            />
             }/>
             <Route exact path='/requests' render={(props) => 
-            <RequestList {...props}/>
+            <RequestList {...props}
+            requests={this.state.requests}
+            />
             }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage

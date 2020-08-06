@@ -38,9 +38,10 @@ export default class RequestList extends Component {
             <h4>Posted At:{createdAt.toLocaleString()}</h4>
           </Link>
         );
+        console.log(requests);
     return (   
           <>
-          <div className="container">{requests}</div>
+          <div className="rcontainer">{requests}</div>
           </>
       );
     }
