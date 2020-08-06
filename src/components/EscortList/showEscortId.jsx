@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './EscortList';
 import { Link } from 'react-router-dom';
 import './showEscortId.css';

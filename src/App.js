@@ -143,7 +143,7 @@ render() {
             {...props}
             requestToEdit={this.state.requestToEdit}
             handleRemoveRequest={this.handleRemoveRequest}
-            handleEditRequest={this.handleEditRequest}
+            handleRequestEdit={this.handleRequestEdit}
             requests={this.state.requests} 
             handleEditRequest={this.handleEditRequest}
             request={this.state.requests.find(request => request._id === props.match.params.id)}/>
