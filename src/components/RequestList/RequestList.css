@@ -1,7 +1,27 @@
-.container {
+.requestList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid goldenrod;
+    border-radius: 5%;
+    text-decoration: none;
+    background-color: white;
+    color: goldenrod;
+    font-weight: 800;
+    opacity: 0.6;
+}
+
+
+
+.requestListContainer {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    font-size: calc(10px + 2vmin);
-    color: rgb(126, 41, 126);
+    flex-direction: row;
+    font-size: 0.2rem;
 }

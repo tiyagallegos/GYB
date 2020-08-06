@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import './EscortEditForm.css';
+import './RequestEditForm.css';
 import { Link } from 'react-router-dom';
 
-
-export default class EscortEditForm extends Component {
-    state = this.props.escort
+export default class RequestEditForm extends Component {
+    state = this.props.request
     
-
-
 handleEdit = (e) => {
-    const escortId = this.state._id;
+    const requestId = this.state._id;
         e.preventDefault();
-        this.props.handleEditEscort(escortId, this.state) 
+        this.props.handleEditRequest(requestId, this.state) 
         this.setState({title: "Homie Escort", 
                         ableBodied: true, 
                         vehicle: "", 
@@ -21,7 +18,7 @@ handleEdit = (e) => {
                         availability: "", 
                         details: ""             },
           function () {
-            this.props.history.push(`/escorts/${escortId}`)
+            this.props.history.push(`/requests/${requestId}`)
           });
       }
 
@@ -31,14 +28,12 @@ handleEdit = (e) => {
       });
   }
 
-
-
 render(){
     return (
         <>
-        <div className="editform">
-        <form className="EditEscortForm" onSubmit={this.handleEdit}><br/><br/><br/><br/>
-          <header className="eHeader">Edit Post</header><br/><br/><br/>
+        <div className="reditform">
+        <form className="rEditEscortForm" onSubmit={this.handleEdit}><br/><br/><br/><br/>
+          <header className="reHeader">Edit Request</header><br/><br/><br/>
             <label>Title: </label>
             <input onChange={ this.handleChange } 
             value={this.state.title}
@@ -49,41 +44,28 @@ render(){
             value={this.state.ableBodied}
             name="ableBodied"
              />
-            <label>Vehicle: </label>
+            <label>Danger Level: </label>
             <input onChange={ this.handleChange } 
-            value={this.state.vehicle}
-            name="vehicle"
+            value={this.state.dangerLevel}
+            name="dangerLevel"
             />
-            <label>Walking: </label>
+            <label>Availability: </label>
             <input onChange={ this.handleChange } 
-            value={this.state.walking}
-            name="walking"
-             />
-            <label>Self Defense Training: </label>
-            <input onChange={ this.handleChange } 
-            value={this.state.selfDefenseTraining}
-            name="selfDefenseTraining"
+            value={this.state.availability}
+            name="availability"
              />
              <label>Location: </label>
             <input onChange={ this.handleChange } 
             value={this.state.location}
             name="location"
              />
-            <label>Availability: </label>
-            <input onChange={ this.handleChange } 
-            value={this.state.availability}
-            name="availability"
-             />
             <label>Details: </label>
             <textarea onChange={ this.handleChange } 
             value={this.state.details}
             name="details"
              />
-
-  
-            <button className="editButton">EDIT</button>
-            <Link className="editCancel" to="/">Cancel</Link> 
-            
+            <button className="reditButton">EDIT</button>
+            <Link className="reditCancel" to="/">Cancel</Link> 
             </form>
             </div>
         </>

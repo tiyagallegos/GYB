@@ -9,11 +9,14 @@ import LoginPage from '../src/components/Pages/LoginPage/LoginPage';
 import RequestForm from './components/RequestForm/RequestForm';
 import EscortForm from '../src/components/EscortForm/EscortForm';
 import NavBar from './components/NavBar/NavBar';
-import EscortListId from './components/EscortList/showEscortId';
 import Footer from '../src/components/Footer/Footer';
 import EscortList from '../src/components/EscortList/EscortList';
 import EscortEditForm from '../src/components/EscortEditForm/EscortEditForm';
 import ShowEscortId from './components/EscortList/showEscortId';
+import requestService from '../src/components/utils/requestService';
+import RequestEditForm from '../src/components/RequestEditForm/RequestEditForm';
+import RequestList from '../src/components/RequestList/RequestList';
+import ShowRequestId from '../src/components/RequestList/ShowRequestId';
 
 class App extends Component {
   constructor() {
@@ -21,7 +24,9 @@ class App extends Component {
     this.state = {
       user: userService.getUser(),
       escorts: [],
-      escortToEdit: null
+      escortToEdit: null,
+      requests: [],
+      requestToEdit: null
     };
   }
 
@@ -31,16 +36,34 @@ handleRemoveEscort = async id => {
     this.setState({ escorts });
   } 
 
+handleRemoveRequest = async id => {
+    const requests = await requestService.removeRequest(id);
+    this.props.history.push('/')
+    this.setState({ requests });
+  } 
+
 handleAddEscort = async (escort, id) => {
     const escorts = await escortService.createEscort(escort, id)
     console.log(escorts)
     this.setState({ escorts });
-   }
+  }
+
+  handleAddRequest = async (request, id) => {
+    const requests = await requestService.createRequest(request, id)
+    console.log(requests)
+    this.setState({ requests });
+  }
 
 handleEditEscort = async (id, data) => {
     const escorts = await escortService.updateEscort(id, data);
     console.log(escorts)
     this.setState({ escorts, escortToEdit: null });
+}
+
+handleRequestEdit = async (id, data) => {
+  const requests = await requestService.updateRequest(id, data);
+  console.log(requests)
+  this.setState({ requests, requestToEdit: null });
 }
 handleEdit = async id => {
   const escortToEdit = await this.state.escorts.find(function(escort) {
@@ -49,7 +72,12 @@ handleEdit = async id => {
 this.setState({ escortToEdit });
 }
 
-
+handleEditRequest = async id => {
+  const requestToEdit = await this.state.requests.find(function(request) {
+      return request._id === id;
+  })
+this.setState({ requestToEdit });
+}
 
 handleLogout = () => {
   userService.logout();
@@ -62,7 +90,8 @@ handleSignupOrLogin = () => {
 
 async componentDidMount() {
   const escorts = await escortService.getEscorts()
-  this.setState({escorts});
+  const requests = await requestService.getRequests()
+  this.setState({escorts, requests});
 }
 
 render() {
@@ -80,6 +109,15 @@ render() {
               
               user={this.state.user}
               escorts={this.state.escorts} />
+            }/>
+            <Route exact path='/requests/:id/edit' render={(props) =>
+            <RequestEditForm  
+            {...props}
+            requestToEdit={this.state.requestToEdit}
+            handleRequestEdit={this.handleRequestEdit}
+            handleEditRequest={this.handleEditRequest}
+            requests={this.state.requests} 
+            request={this.state.requests.find(request => request._id === props.match.params.id)}/>
             }/>
             <Route exact path='/escorts/:id/edit' render={(props) =>
             <EscortEditForm  
@@ -100,8 +138,21 @@ render() {
             handleEditEscort={this.handleEditEscort}
             escort={this.state.escorts.find(escort => escort._id === props.match.params.id)}/>
             }/>
+            <Route exact path='/requests/:id' render={(props) =>
+            <ShowRequestId
+            {...props}
+            requestToEdit={this.state.requestToEdit}
+            handleRemoveRequest={this.handleRemoveRequest}
+            handleEditRequest={this.handleEditRequest}
+            requests={this.state.requests} 
+            handleEditRequest={this.handleEditRequest}
+            request={this.state.requests.find(request => request._id === props.match.params.id)}/>
+            }/>
             <Route exact path='/escorts' render={(props) => 
             <EscortList {...props}/>
+            }/>
+            <Route exact path='/requests' render={(props) => 
+            <RequestList {...props}/>
             }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage
@@ -115,7 +166,13 @@ render() {
             }/>
             <Route exact path='/requestForm' render={(props) => 
                 userService.getUser() ? 
-                <RequestForm {...props}/>
+                <RequestForm 
+                {...props}
+                handleAddRequest={this.handleAddRequest}
+                requestToEdit={this.requestToEdit}
+                handleEditRequest={this.handleEditRequest} 
+                requests={this.state.requests} 
+                />
                 :
                 <Redirect to='login' />
             }/>

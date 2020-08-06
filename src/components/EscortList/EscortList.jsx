@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-import EscortListItem from '../EscortListItem/EscortListItem';
-import EscortForm from '../EscortForm/EscortForm';
 import escortService from '../utils/escortService';
 import './Escortlist.css';
 import { Link } from 'react-router-dom';
-import EscortListId from './showEscortId';
 
 
-export default class RequestList extends Component {
-    state = {
-        
-    };
 
-    
-      
+export default class EscortList extends Component {
+    state = { };
+
+
       handleEscortDoneUpdate = async id => {
           const escorts = await escortService.updateDoneEscort(id);
           this.setState({ escorts });
@@ -40,16 +35,12 @@ export default class RequestList extends Component {
         this.setState({escortToShow});
     } 
   
-      //lifecycle method--gets auto called by react durign a specific phase
-      
-      
-
 
     render () {
     
       const escorts = this.props.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
                             availability, details, title, createdAt, timestamps}) =>
-        <Link to={`/escorts/${_id}`} className="eRequests" key={_id} >
+        <Link to={`/escorts/${_id}`} className="escortList" key={_id} >
         <h3>Title:{title}</h3>
         <h4>Posted At:{createdAt.toLocaleString()}</h4>
         
