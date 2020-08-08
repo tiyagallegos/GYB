@@ -23,13 +23,13 @@ Access to creator's LI and GH handles provided at bottom of home page.
 ## Images of working app
 
 Landing Page:
-![Landing Page](public/images/1.png)
+![Landing Page](public/images/GYB-AboutUs.png)
 
 About Us:
-![Patient Index](desk)
+![Patient Index](public/images/GYB-Forms.png)
 
 Request Form:
-![Patient Intake Form](public/images/3.png)
+![Patient Intake Form](public/images/GYB-Landingpage.png)
 
 ## Getting Started
 Explore information and resources about the app on the landing page.
