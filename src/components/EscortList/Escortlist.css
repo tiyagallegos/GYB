@@ -4,10 +4,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
     width: 150px;
     padding: 5px;
-    margin: 5px;
+    margin: 15px;
     border: 2px solid goldenrod;
     border-radius: 5%;
     text-decoration: none;
@@ -16,17 +16,27 @@
     font-weight: 800;
     opacity: 0.6;
 }
-
+.escortList:hover {
+    background-color: black;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    opacity: 1;
+}
 
 
 .container {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     font-size: 0.2rem;
 }
 
 .eTitle {
+    padding: 10px;
+    text-align: justify;
     color: goldenrod;
     font-weight: 800;
 }

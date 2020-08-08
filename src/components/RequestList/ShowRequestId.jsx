@@ -7,20 +7,15 @@ export default props => {
     return (
             <div classname="rIdContainer">
             <div className="requestId">
-            <h1>Title:{props.request.title}</h1>
-            <p>Created By:{props.request.createdBy}</p> 
-            <p> Able Bodied: {props.request.ableBodied}</p>
-            <p> Danger Level:{props.request.dangerLevel} </p>
-            <p> Location: {props.request.location} </p>
-            <p>Details: {props.request.details} </p>
-            <p>Created At:{props.request.createdAt.toLocaleString()}</p>
-            
-        
-       
-        <Link className="reditLink" to={`/requests/${props.request._id}/edit`} onClick={() => props.handleEditRequest(props.id)}>✏️</Link>
-
-        <span className="rdeleteRequestButton" onClick={() => props.handleRemoveRequest(props.request._id)}>⛔️</span>
-        
+            <h1>Title: {props.request.title}</h1><br/>
+            <p>Created By: {props.user.name}</p><br/>
+            <p> Able Bodied: {props.request.ableBodied}</p><br/>
+            <p> Danger Level: {props.request.dangerLevel} </p><br/>
+            <p> Location: {props.request.location}</p><br/>
+            <p>Details: {props.request.details}</p><br/>
+            <p>Created At: {props.request.createdAt.toLocaleString()}</p><br/>
+        <Link className="reditLink" to={`/requests/${props.request._id}/edit`} onClick={() => props.handleREdit(props.id)}>✏️</Link><br/>
+        <span className="rdeleteRequestButton" onClick={() => props.handleRemoveRequest(props.request._id)}>⛔️</span><br/>
         <Link className="rbackLink" to="/">Back</Link></div>
         </div>
     );

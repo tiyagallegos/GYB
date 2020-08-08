@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 export default class EscortEditForm extends Component {
     state = this.props.escort
-    
-
 
 handleEdit = (e) => {
     const escortId = this.state._id;
@@ -30,9 +28,6 @@ handleEdit = (e) => {
           [e.target.name]: e.target.value 
       });
   }
-
-
-
 render(){
     return (
         <>
@@ -43,47 +38,44 @@ render(){
             <input onChange={ this.handleChange } 
             value={this.state.title}
             name="title"
-            />
+            /><br/>
             <label>Able Bodied: </label>
             <input onChange={ this.handleChange } 
             value={this.state.ableBodied}
             name="ableBodied"
-             />
+             /><br/>
             <label>Vehicle: </label>
             <input onChange={ this.handleChange } 
             value={this.state.vehicle}
             name="vehicle"
-            />
+            /><br/>
             <label>Walking: </label>
             <input onChange={ this.handleChange } 
             value={this.state.walking}
             name="walking"
-             />
+             /><br/>
             <label>Self Defense Training: </label>
             <input onChange={ this.handleChange } 
             value={this.state.selfDefenseTraining}
             name="selfDefenseTraining"
-             />
+             /><br/>
              <label>Location: </label>
             <input onChange={ this.handleChange } 
             value={this.state.location}
             name="location"
-             />
+             /><br/>
             <label>Availability: </label>
             <input onChange={ this.handleChange } 
             value={this.state.availability}
             name="availability"
-             />
+             /><br/>
             <label>Details: </label>
             <textarea onChange={ this.handleChange } 
             value={this.state.details}
             name="details"
-             />
-
-  
-            <button className="editButton">EDIT</button>
+             /><br/>
+            <button className="editButton">EDIT</button><br/>
             <Link className="editCancel" to="/">Cancel</Link> 
-            
             </form>
             </div>
         </>

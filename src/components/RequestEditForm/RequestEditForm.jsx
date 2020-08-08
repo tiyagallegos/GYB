@@ -8,7 +8,7 @@ export default class RequestEditForm extends Component {
 handleEdit = (e) => {
     const requestId = this.state._id;
         e.preventDefault();
-        this.props.handleEditRequest(requestId, this.state) 
+        this.props.handleRequestEdit(requestId, this.state) 
         this.setState({ title: "", 
                         ableBodied: true, 
                         location: "",
@@ -29,38 +29,38 @@ render(){
         <>
         <div className="reditform">
         <form className="rEditEscortForm" onSubmit={this.handleEdit}><br/><br/><br/><br/>
-          <header className="reHeader">Edit Request</header><br/><br/><br/>
+          <header className="reditHeader">Edit Request</header><br/><br/><br/>
             <label>Title: </label>
             <input onChange={ this.handleChange } 
             value={this.state.title}
             name="title"
-            />
+            /><br/>
             <label>Able Bodied: </label>
             <input onChange={ this.handleChange } 
             value={this.state.ableBodied}
             name="ableBodied"
-             />
+             /><br/>
             <label>Danger Level: </label>
             <input onChange={ this.handleChange } 
             value={this.state.dangerLevel}
             name="dangerLevel"
-            />
+            /><br/>
             <label>Availability: </label>
             <input onChange={ this.handleChange } 
             value={this.state.availability}
             name="availability"
-             />
+             /><br/>
              <label>Location: </label>
             <input onChange={ this.handleChange } 
             value={this.state.location}
             name="location"
-             />
+             /><br/>
             <label>Details: </label>
             <textarea onChange={ this.handleChange } 
             value={this.state.details}
             name="details"
-             />
-            <button className="reditButton">EDIT</button>
+             /><br/>
+            <button className="reditButton">EDIT</button><br/>
             <Link className="reditCancel" to="/">Cancel</Link> 
             </form>
             </div>

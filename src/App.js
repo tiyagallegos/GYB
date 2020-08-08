@@ -17,6 +17,10 @@ import requestService from '../src/components/utils/requestService';
 import RequestEditForm from '../src/components/RequestEditForm/RequestEditForm';
 import RequestList from '../src/components/RequestList/RequestList';
 import ShowRequestId from '../src/components/RequestList/ShowRequestId';
+import AboutUs from '../src/components/InfoPages/AboutUs';
+import Donate from '../src/components/InfoPages/Donate';
+import Resources from '../src/components/InfoPages/Resources';
+import AllEscorts from './components/EscortList/AllEscorts';
 
 class App extends Component {
   constructor() {
@@ -72,7 +76,7 @@ handleEdit = async id => {
 this.setState({ escortToEdit });
 }
 
-handleEditRequest = async id => {
+handleREdit = async id => {
   const requestToEdit = await this.state.requests.find(function(request) {
       return request._id === id;
   })
@@ -113,15 +117,17 @@ render() {
             <Route exact path='/requests/:id/edit' render={(props) =>
             <RequestEditForm  
             {...props}
+            user={this.state.user}
             requestToEdit={this.state.requestToEdit}
             handleRequestEdit={this.handleRequestEdit}
-            handleEditRequest={this.handleEditRequest}
+            handleREdit={this.handleREdit}
             requests={this.state.requests} 
             request={this.state.requests.find(request => request._id === props.match.params.id)}/>
             }/>
             <Route exact path='/escorts/:id/edit' render={(props) =>
             <EscortEditForm  
             {...props}
+            user={this.state.user}
             escortToEdit={this.state.escortToEdit}
             handleEdit={this.handleEdit}
             handleEditEscort={this.handleEditEscort}
@@ -131,6 +137,7 @@ render() {
             <Route exact path='/escorts/:id' render={(props) =>
             <ShowEscortId
             {...props}
+            user={this.state.user}
             escortToEdit={this.state.escortToEdit}
             handleRemoveEscort={this.handleRemoveEscort}
             handleEdit={this.handleEdit}
@@ -141,16 +148,17 @@ render() {
             <Route exact path='/requests/:id' render={(props) =>
             <ShowRequestId
             {...props}
+            user={this.state.user}
             requestToEdit={this.state.requestToEdit}
             handleRemoveRequest={this.handleRemoveRequest}
             handleRequestEdit={this.handleRequestEdit}
             requests={this.state.requests} 
-            handleEditRequest={this.handleEditRequest}
+            handleREdit={this.handleREdit}
             request={this.state.requests.find(request => request._id === props.match.params.id)}/>
             }/>
             <Route exact path='/escorts' render={(props) => 
             <EscortList {...props}
-            escorts={this.state.escorts} 
+            escorts={this.state.escorts}
             />
             }/>
             <Route exact path='/requests' render={(props) => 
@@ -172,6 +180,7 @@ render() {
                 userService.getUser() ? 
                 <RequestForm 
                 {...props}
+                user={this.state.user}
                 handleAddRequest={this.handleAddRequest}
                 requestToEdit={this.requestToEdit}
                 handleEditRequest={this.handleEditRequest} 
@@ -183,6 +192,7 @@ render() {
             <Route exact path='/escortForm' render={(props) => 
                 userService.getUser() ? 
                 <EscortForm {...props}
+                user={this.state.user}
                 handleAddEscort={this.handleAddEscort}
                 escortToEdit={this.escortToEdit}
                 handleEditEscort={this.handleEditEscort} 
@@ -190,6 +200,15 @@ render() {
                 />
                 :
                 <Redirect to='login' />
+            }/>
+            <Route exact path='/aboutus' render={(props) => 
+            <AboutUs {...props} />
+            }/>
+            <Route exact path='/donations' render={(props) => 
+            <Donate {...props} />
+            }/>
+            <Route exact path='/resources' render={(props) => 
+            <Resources {...props} />
             }/>
       </Switch>
     </div>

@@ -4,10 +4,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 60px;
     width: 150px;
     padding: 5px;
-    margin: 5px;
+    margin: 15px;
     border: 2px solid goldenrod;
     border-radius: 5%;
     text-decoration: none;
@@ -17,16 +17,26 @@
     opacity: 0.6;
 }
 
-
+.requestList:hover {
+    background-color: black;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    opacity: 1;
+}
 
 .requestListContainer {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     font-size: 0.2rem;
 }
 
 .rTitle {
+    margin: 10px;
+    text-align: justify;
     color: goldenrod;
     font-weight: 800;
 }

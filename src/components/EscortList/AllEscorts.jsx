@@ -5,7 +5,8 @@ import './showEscortId.css';
 
 export default props => {
     return (
-            <div> { escorts }</div>
+            
+        <div><Link className="backLink" to="/">Back</Link></div>
     );
 }
 
