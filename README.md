@@ -22,13 +22,13 @@ Access to creator's LI and GH handles provided at bottom of home page.
 
 ## Images of working app
 
-#####About Us Page:
+###About Us Page:
 ![About Us Page Screenshot](public/images/GYB-AboutUs.png)
 
-##### Form:
+### Form:
 ![Request Form](public/images/GYB-Form.png)
 
-####Landing Page:
+###Landing Page:
 ![Landing Page](public/images/GYB-Landingpage.png)
 
 ## Getting Started
