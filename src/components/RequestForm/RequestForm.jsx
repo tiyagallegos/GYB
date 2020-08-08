@@ -6,7 +6,7 @@ import userService from '../utils/userService';
 export default class RequestForm extends Component {
   state = {
           title: "", 
-          ableBodied: true, 
+          ableBodied: "", 
           dangerLevel: "", 
           location: "",
           details: "",
@@ -61,7 +61,7 @@ handleSubmitRequest = e => {
       name="details"
       placeholder={this.props.requestToEdit.details} />
 
-      <button onClick={() => this.handleEditRequest()}>EDIT</button>
+      <button onClick={() => this.handleRequestEdit()}>EDIT</button>
       </>
       :
       <div className="rform">

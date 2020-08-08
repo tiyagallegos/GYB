@@ -10,12 +10,12 @@ handleEdit = (e) => {
     const escortId = this.state._id;
         e.preventDefault();
         this.props.handleEditEscort(escortId, this.state) 
-        this.setState({title: "Homie Escort", 
-                        ableBodied: true, 
+        this.setState({title: "", 
+                        ableBodied: "", 
                         vehicle: "", 
                         walking: "",
                         location: "",
-                        selfDefenseTraining: false,
+                        selfDefenseTraining: "",
                         availability: "", 
                         details: ""             },
           function () {

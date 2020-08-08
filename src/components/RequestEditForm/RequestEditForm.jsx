@@ -8,9 +8,11 @@ export default class RequestEditForm extends Component {
 handleEdit = (e) => {
     const requestId = this.state._id;
         e.preventDefault();
-        this.props.handleRequestEdit(requestId, this.state) 
+        this.props.handleREdit(requestId, this.state) 
         this.setState({ title: "", 
-                        ableBodied: true, 
+                        ableBodied: "",
+                        dangerLevel: "", 
+                        availability:"",
                         location: "",
                         details: ""             },
           function () {

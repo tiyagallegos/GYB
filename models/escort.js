@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const escortSchema = new Schema({
     title: String, 
     createdBy: {type:Schema.Types.ObjectId, ref:"User"},
-    ableBodied: Boolean, 
+    ableBodied: String, 
     vehicle: String, 
     walking: String,
     location: String,
-    selfDefenseTraining: Boolean,
+    selfDefenseTraining: String,
     availability: String, 
     details: String
 }, { timestamps: true });

@@ -41,9 +41,8 @@ export default class EscortList extends Component {
       const escorts = this.props.escorts.map(({_id, ableBodied, vehicle, walking, location, selfDefenseTraining, 
                             availability, details, title, createdAt, timestamps}) =>
         <Link to={`/escorts/${_id}`} className="escortList" key={_id} >
-        <h3>Title:{title}</h3>
-        <h4>Posted At:{createdAt.toLocaleString()}</h4>
-        
+        <h3>{title}</h3><br/>
+            <h4>Posted: {new Date(createdAt).toLocaleDateString()} at {new Date(createdAt).toLocaleTimeString([], {timeStyle: 'short'})}</h4>   
         </Link>
         );
     return (   

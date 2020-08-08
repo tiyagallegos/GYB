@@ -10,16 +10,68 @@
     background-color: black;
     color: whitesmoke;
     margin: 30px;
-    padding: 10px;
+    padding: 20px;
 }
 .qtpocimg{
     display: flex;
     height: 200px;
-    border: 15px solid goldenrod;
+    border: 5px solid goldenrod;
+    border-radius: 15%;
 }
 
 .infopages {
     font-size: 40px;
     font-weight: 800;
     color: goldenrod;
+}
+
+.donateimg{
+    display: flex;
+    height: 200px;
+    border: 5px solid goldenrod;
+    border-radius: 15%;
+}
+
+.moneybutton {
+    border: 2px solid;
+    background-color: black;
+    font-size: 70px;
+
+}
+
+.moneybutton:hover {
+    border-radius: 15%;
+    
+    cursor: pointer;
+    background-color: black;
+    font-size: 90px;
+
+}
+
+.resourceLinks {
+    color: white;
+    text-decoration: none;
+    text-align: justify;
+}
+
+.resourceLinks:hover {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: 800;
+    text-align: justify;
+}
+
+.resourceList li {
+    list-style: none;
+}
+
+.backLinkinfo:hover {
+    color: goldenrod;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.backLinkinfo {
+    color: white;
+    text-decoration: none;
 }

@@ -34,8 +34,8 @@ export default class RequestList extends Component {
     render () {
       const requests = this.props.requests.map(({_id, dangerLevel, ableBodied, location, details, title, createdAt, timestamps}) =>
           <Link to={`/requests/${_id}`} className="requestList" key={_id} >
-            <h3>Title:{title}</h3>
-            <h4>Posted At:{createdAt.toLocaleString()}</h4>
+            <h3>{title}</h3><br/>
+            <h4>Posted: {new Date(createdAt).toLocaleDateString()} at {new Date(createdAt).toLocaleTimeString([], {timeStyle: 'short'})}</h4>
           </Link>
         );
         console.log(requests);

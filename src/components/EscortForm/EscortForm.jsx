@@ -8,7 +8,7 @@ import userService from '../utils/userService';
 export default class EscortForm extends Component {
     state = {
             title: "", 
-            ableBodied: true, 
+            ableBodied: "", 
             vehicle: "", 
             walking: "",
             location: "",

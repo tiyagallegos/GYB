@@ -13,7 +13,7 @@ export default props => {
             <p> Danger Level: {props.request.dangerLevel} </p><br/>
             <p> Location: {props.request.location}</p><br/>
             <p>Details: {props.request.details}</p><br/>
-            <p>Created At: {props.request.createdAt.toLocaleString()}</p><br/>
+            <p>Created At: {new Date(props.request.createdAt).toLocaleDateString()} at {new Date(props.request.createdAt).toLocaleTimeString([], {timeStyle: 'short'})}</p><br/>
         <Link className="reditLink" to={`/requests/${props.request._id}/edit`} onClick={() => props.handleREdit(props.id)}>✏️</Link><br/>
         <span className="rdeleteRequestButton" onClick={() => props.handleRemoveRequest(props.request._id)}>⛔️</span><br/>
         <Link className="rbackLink" to="/">Back</Link></div>

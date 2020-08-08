@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const requestSchema = new Schema({
     title: String,
     createdBy: {type:Schema.Types.ObjectId, ref:"User"},
-    ableBodied: Boolean, 
+    ableBodied: String, 
     dangerLevel: String, 
     location: String,
     details: String,

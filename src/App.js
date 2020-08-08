@@ -52,7 +52,7 @@ handleAddEscort = async (escort, id) => {
     this.setState({ escorts });
   }
 
-  handleAddRequest = async (request, id) => {
+handleAddRequest = async (request, id) => {
     const requests = await requestService.createRequest(request, id)
     console.log(requests)
     this.setState({ requests });
@@ -183,7 +183,8 @@ render() {
                 user={this.state.user}
                 handleAddRequest={this.handleAddRequest}
                 requestToEdit={this.requestToEdit}
-                handleEditRequest={this.handleEditRequest} 
+                handleREdit={this.handleREdit}
+                handleEditRequest={this.handleRequestEdit} 
                 requests={this.state.requests} 
                 />
                 :

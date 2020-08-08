@@ -16,7 +16,7 @@ export default props => {
             <p> Self Defense Training: {props.escort.selfDefenseTraining}</p><br/>
             <p> Availability: {props.escort.availability}</p><br/>
             <p>  Details: {props.escort.details}</p><br/>
-            <p>Created At: {props.escort.createdAt.toLocaleString()}</p><br/>       
+            <p>Created At: {new Date(props.escort.createdAt).toLocaleDateString()} at {new Date(props.escort.createdAt).toLocaleTimeString([], {timeStyle: 'short'})}</p><br/>       
         <Link className="editLink" to={`/escorts/${props.escort._id}/edit`} onClick={() => props.handleEdit(props.id)}>✏️</Link><br/>
         <span className="deleteEscortButton" onClick={() => props.handleRemoveEscort(props.escort._id)}>⛔️</span><br/>
         <Link className="backLink" to="/">Back</Link></div>
