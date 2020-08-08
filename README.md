@@ -9,7 +9,7 @@ This application aims to provide community-based support to help decrease the am
 ## Technologies: 
 
 ```bash
-MongoDB/Mongoose, Express, React, Node
+MERN-stack: MongoDB/Mongoose, Express, React, Node
 ```
 
 ## Features: 
@@ -26,7 +26,7 @@ Landing Page:
 ![Landing Page](public/images/1.png)
 
 About Us:
-![Patient Index](public/images/2.png)
+![Patient Index](desk)
 
 Request Form:
 ![Patient Intake Form](public/images/3.png)
@@ -52,4 +52,6 @@ Edit function for Requests
 * Consume Google maps live tracking API so users can drop pin
 * Add color flag to each post based on the level of danger and add dropdown to select level
 * Add logic to track number of QTPOC community getting home safely when using app. 
+* Make my app responsive
+* Transition into React Native app for functionality
 
