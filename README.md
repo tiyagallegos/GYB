@@ -1,5 +1,5 @@
 # Got Yo Back 
-### GA: React SPA 
+### React SPA 
 
 #### About the App
 QTPOC stands for Queer and Trans People of Color. QTPOC experience marginalization at the intersection of racism, ethnocentrism, xenophobia, queerphobia, and transphobia. As a result, QTPOC – especially youth – experience high rates of homelessness, poverty, and violence. 
@@ -22,14 +22,14 @@ Access to creator's LI and GH handles provided at bottom of home page.
 
 ## Images of working app
 
-Landing Page:
-![Landing Page](public/images/1.png)
+#### About Us Page:
+![About Us Page Screenshot](public/images/GYB-AboutUs.png)
 
-About Us:
-![Patient Index](desk)
+#### Form:
+![Request Form](public/images/GYB-Form.png)
 
-Request Form:
-![Patient Intake Form](public/images/3.png)
+#### Landing Page:
+![Landing Page](public/images/GYB-Landingpage.png)
 
 ## Getting Started
 Explore information and resources about the app on the landing page.
