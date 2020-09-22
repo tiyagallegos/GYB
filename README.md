@@ -1,5 +1,5 @@
 # Got Yo Back 
-### GA: React SPA 
+### React SPA 
 
 #### About the App
 QTPOC stands for Queer and Trans People of Color. QTPOC experience marginalization at the intersection of racism, ethnocentrism, xenophobia, queerphobia, and transphobia. As a result, QTPOC – especially youth – experience high rates of homelessness, poverty, and violence. 
